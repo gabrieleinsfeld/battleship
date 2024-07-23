@@ -4,6 +4,8 @@ export default class Gameboard {
   constructor() {
     this.board = this.createBoard();
   }
+
+  // Creates the initial set up of the board with null values
   createBoard() {
     let board = [];
     for (let i = 0; i < 10; i++) {
@@ -16,6 +18,8 @@ export default class Gameboard {
     }
     return board;
   }
+
+  // Adds a new ship to this board
   addShip(x, y) {
     let direction = null;
     if (x[0] == x[1]) {
@@ -36,6 +40,8 @@ export default class Gameboard {
       }
     }
   }
+
+  // Checks if the move is valid or if there is a ship there
   isValid(x, y, direction) {
     let length = 0;
     if (direction == "horizontal") {
@@ -58,5 +64,30 @@ export default class Gameboard {
       }
     }
     return length;
+  }
+
+  receiveAttack(x, y) {
+    if (this.board[x][y] == null) {
+      this.board[x][y] = "Missed shot";
+      return "Missed Shot";
+    } else {
+      this.board[x][y].hit();
+      const allSunk = this.areAllSunk();
+      return "Ship hitted";
+    }
+  }
+
+  areAllSunk() {
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < 10; j++) {
+        const element = this.board[i][j];
+        if (element != null) {
+          if (element.isSunk() == false) {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
   }
 }
