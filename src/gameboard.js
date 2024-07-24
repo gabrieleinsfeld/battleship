@@ -68,12 +68,15 @@ export default class Gameboard {
 
   receiveAttack(x, y) {
     if (this.board[x][y] == null) {
-      this.board[x][y] = "Missed shot";
       return "Missed Shot";
     } else {
       this.board[x][y].hit();
       const allSunk = this.areAllSunk();
-      return "Ship hitted";
+      if (allSunk) {
+        return "All ships are sunk!";
+      } else {
+        return "Ship hitted";
+      }
     }
   }
 

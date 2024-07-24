@@ -5,5 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template Project</title>
   </head>
-  <body></body>
+  <body>
+    <div id="head-container">
+      <div id="header"></div>
+      <div id="display-player"></div>
+    </div>
+    <div id="container"></div>
+
+    <div id="coordinate-dialog" class="coordinate-dialog" style="display: none">
+      <label for="input-x1-coordinate">X1 Coordinate:</label>
+      <input type="text" id="input-x1-coordinate" class="input-x1-coordinate" />
+      <br />
+      <label for="input-x2-coordinate">X2 Coordinate:</label>
+      <input type="text" id="input-x2-coordinate" class="input-x2-coordinate" />
+      <br />
+      <label for="input-y1-coordinate">Y1 Coordinate:</label>
+      <input type="text" id="input-y1-coordinate" class="input-y1-coordinate" />
+      <br />
+      <label for="input-y2-coordinate">Y2 Coordinate:</label>
+      <input type="text" id="input-y2-coordinate" class="input-y2-coordinate" />
+      <br />
+      <button id="submit-coordinates-button" class="submit-coordinates-button">
+        Submit
+      </button>
+      <button id="close-dialog-button" class="close-dialog-button">
+        Close
+      </button>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,84 @@
+:root {
+  --color1: #e4f1fe;
+  --color2: #8dc6ff;
+  --color3: #22313f;
+  --color4: #34495e;
+}
+
+#player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+#start-btn {
+  width: 100px;
+  height: 50px;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+}
+#head-container {
+  flex-direction: column;
+  margin-top: 40px;
+  row-gap: 20px;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color4);
+}
+
+#container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  height: 100vh;
+}
+.board-container {
+  width: 300px;
+  height: 300px;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.5px;
+}
+.cell {
+  background-color: var(--color2);
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
+
+.coordinate-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears above other content */
+}
